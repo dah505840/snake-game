@@ -101,7 +101,7 @@
     }
     showOverlay(
       "Great effort!",
-      `You collected ${score} droplet${score === 1 ? "" : "s"}. Every drop brings hope.",
+      `You collected ${score} droplet${score === 1 ? "" : "s"}. Every drop brings hope.`,
       "Play Again"
     );
   }
