@@ -25,14 +25,18 @@
   const rows = canvas.height / GRID;
 
   const jerryCanImg = new Image();
-  jerryCanImg.src = "assets/jerry-can-official.png";
   const dropletImg = new Image();
-  dropletImg.src = "assets/droplet.svg";
+  let loadedImages = 0;
+
   [jerryCanImg, dropletImg].forEach((img) => {
     img.onload = () => {
-      if (!running) draw();
+      loadedImages += 1;
+      if (loadedImages === 2 && !running) draw();
     };
   });
+
+  jerryCanImg.src = "assets/selected-jerry-can-2026.png";
+  dropletImg.src = "assets/droplet.svg";
 
   let snake;
   let direction;
