@@ -1,73 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>charity: water — Snake</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <a class="brand" href="https://www.charitywater.org" target="_blank" rel="noopener noreferrer">
+        <img class="brand-icon" src="assets/jerry-can-official.png" alt="" width="40" height="40">
+        <span class="brand-wordmark">charity: water</span>
+      </a>
+      <p class="tagline">100% of public donations go directly to water projects.</p>
+      <a class="donate-link" href="https://www.charitywater.org/donate" target="_blank" rel="noopener noreferrer">Donate</a>
+    </header>
 
-        body {
-            display: flex;
-            justify-content: center;
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>charity: water — Snake</title>
-              <link rel="preconnect" href="https://fonts.googleapis.com">
-              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-              <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-              <link rel="stylesheet" href="style.css">
-            </head>
-            <body>
-              <div class="page">
-                <header class="header">
-                  <a class="brand" href="https://www.charitywater.org" target="_blank" rel="noopener noreferrer">
-                    <img class="brand-icon" src="assets/jerry-can-official.png" alt="" width="40" height="40">
-                    <span class="brand-wordmark">charity: water</span>
-                  </a>
-                  <p class="tagline">100% of public donations go directly to water projects.</p>
-                  <a class="donate-link" href="https://www.charitywater.org/donate" target="_blank" rel="noopener noreferrer">Donate</a>
-                </header>
+    <main class="game-shell">
+      <div class="hud">
+        <div class="hud-item">
+          <span class="hud-label">Score</span>
+          <span id="score" class="hud-value">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">High Score</span>
+          <span id="high-score" class="hud-value">0</span>
+        </div>
+      </div>
 
-                <main class="game-shell">
-                  <div class="hud">
-                    <div class="hud-item">
-                      <span class="hud-label">Score</span>
-                      <span id="score" class="hud-value">0</span>
-                    </div>
-                    <div class="hud-item">
-                      <span class="hud-label">High Score</span>
-                      <span id="high-score" class="hud-value">0</span>
-                    </div>
-                  </div>
+      <div class="canvas-wrap">
+        <canvas id="game" width="480" height="480" aria-label="Snake game board"></canvas>
+        <div id="overlay" class="overlay hidden">
+          <div class="overlay-card">
+            <h2 id="overlay-title">Ready to play?</h2>
+            <p id="overlay-message">Collect water droplets with your jerry can. Arrow keys or swipe to move.</p>
+            <button id="start-btn" type="button">Start Game</button>
+          </div>
+        </div>
+      </div>
 
-                  <div class="canvas-wrap">
-                    <canvas id="game" width="480" height="480" aria-label="Snake game board"></canvas>
-                    <div id="overlay" class="overlay hidden">
-                      <div class="overlay-card">
-                        <h2 id="overlay-title">Ready to play?</h2>
-                        <p id="overlay-message">Collect water droplets with your jerry can. Arrow keys or swipe to move.</p>
-                        <button id="start-btn" type="button">Start Game</button>
-                      </div>
-                    </div>
-                  </div>
+      <p class="controls-hint">Arrow keys · WASD · or swipe on mobile</p>
+    </main>
 
-                  <p class="controls-hint">Arrow keys · WASD · or swipe on mobile</p>
-                </main>
+    <footer class="footer">
+      <p>Hopeful. Energetic. Human. Every drop counts.</p>
+    </footer>
+  </div>
 
-                <footer class="footer">
-                  <p>Hopeful. Energetic. Human. Every drop counts.</p>
-                </footer>
-              </div>
-
-              <script src="game.js"></script>
-            </body>
-            </html>
-
+  <script src="game.js"></script>
+</body>
+</html>
